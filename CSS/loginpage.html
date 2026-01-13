@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <style>
+        .form-field{
+            margin-bottom: 15px;
+        }
+        .form-container{
+            width:40%;
+           border:2px solid black;
+            margin: auto;
+            padding: 25px;
+        }
+        .input-group{
+            margin-top:10px;
+            border:1px;
+            border-bottom-style: solid;
+            border-color: black;
+
+           
+        }
+         .input-group input{
+            border:none;
+            outline:none;
+          width:90%
+        }
+        .forgot{
+            text-align: right;
+            /* text-decoration:none; */
+        }
+        a{
+            text-decoration:none;
+        }
+        h1{
+            text-align: center;
+        }
+        .form-field button{
+          background-color: blue;
+          border:none;
+          padding:10px;
+          width:100%;
+          border-radius: 999px;
+          color:white
+        }
+        .form-field a{
+          color:black;
+        }
+        .common-center{
+          text-align: center;
+        }
+
+        .signup{
+          margin-top:20%
+        }
+        .icons i{
+          border-radius: 50px;
+          /* border:1px solid black; */
+          padding:5px;
+          color:white
+        }
+
+        .fa-facebook-f{
+          background-color: #3A5997;
+        }
+        .fa-twitter{
+          background-color:  #1DA1F2
+        }
+
+        .fa-google{
+          background-color: #E74430;
+        }
+
+    </style>
+  </head>
+  <body>
+    <form class="form-container">
+      <h1>Login</h1>
+
+      <div class="form-field">
+        <label>username</label>
+        <div class="input-group">
+          <i class="fa-regular fa-user"></i>
+          <input type="email" placeholder="enter your username" />
+         <!-- <hr> -->
+        </div>
+      </div>
+
+      <div class="form-field">
+        <label>password</label>
+        <div  class="input-group">
+          <i class="fa-solid fa-lock"></i>
+          <input type="password" placeholder="enter your password" />
+         <!-- <hr> -->
+        </div>
+      </div>
+
+      <div class="form-field forgot">
+        <a href="">forgot passsword</a>
+      </div>
+
+      <div class="form-field">
+        <button>LOGIN</button>
+      </div>
+
+      <div class="form-field common-center">
+        <p>or signup using</p>
+        <div class="icons">
+            <i class="fa-brands fa-facebook-f"></i>
+            <i class="fa-brands fa-twitter"></i>
+            <i class="fa-brands fa-google"></i>
+        </div>
+      </div>
+
+      <div class="form-field common-center signup"
+        <p>or sign up using</p>
+        <a href="">Sign Up</a>
+      </div>
+
+    </form>
+  </body>
+</html>
