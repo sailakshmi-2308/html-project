@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .parent{
+            display:grid;
+            /* grid-template-columns:30% 30% 30% */
+            grid-template-columns: repeat(auto-fit,minmax(250px,1fr) );
+            gap:20px
+           
+        }
+        .card{
+            /* border: 2px solid black; */
+            box-shadow: 0 2px 100px black;
+            /* width:25%; */
+            padding:20px;
+            border-radius: 10px;
+        }
+        img{
+            width:100%
+        }
+        .card button{
+            background-color: green;
+            color:white;
+            border:none;
+            width:30%;
+            padding:15px;
+            border-radius: 15px;
+         
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="parent">
+    <div class="card">
+        <img src="monk.jpg">
+        <h1>monk</h1>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Modi temporibus exercitationem omnis perspiciatis qui quaerat laboriosam officiis, beatae deleniti vitae neque quia, autem provident, quas suscipit sequi libero aspernatur non tempore et quae numquam dicta. Repudiandae saepe mollitia laborum fuga, reiciendis sequi illo veniam, culpa itaque explicabo rem doloribus. Iure.</p>
+        <div style="text-align: center;">
+        <button>ADD</button>
+        </div>
+    </div>
+    <div class="card">
+        <img src="monk.jpg">
+        <h1>Yogi</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque, perspiciatis impedit. Rem ratione quod minima animi ea iure ad dolorem dicta aliquid, reiciendis labore magni aspernatur, tenetur praesentium? Praesentium totam magni est culpa quo! Quod, voluptatibus quos quis neque impedit repellendus nobis, explicabo deleniti doloremque animi possimus? Tempora, dolore illo!\</p>
+        <div style="text-align: center;">
+        <button>ADD</button>
+        </div>
+    </div>
+    <div class="card">
+        <img src="monk.jpg">
+        <h1>Buddha</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima dolores nesciunt rem laborum nemo, aperiam quas natus. Odio vero numquam natus dicta repellendus libero nemo placeat architecto ducimus suscipit inventore nihil aspernatur voluptatum asperiores magni quasi magnam eum repudiandae eveniet necessitatibus id dolores illo, excepturi mollitia. Inventore ipsam saepe ratione!</p>
+         <div style="text-align: center;">
+        <button>ADD</button>
+        </div>
+    </div>
+    </div>
+</body>
+</html>
