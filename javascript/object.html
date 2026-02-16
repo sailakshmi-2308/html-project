@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    let person={
+        name:"pavan",
+        age:20,
+        city:"raj"
+}
+
+console.log(person.age)
+
+
+
+let person1={
+    name:"mouli",
+    greet:function(){
+        let name="vivek"
+        console.log(`helloooo ${this.name},how are you????`)
+    }
+}
+
+
+
+
+// console.log(person1)
+console.log(person1.greet())
+
+
+// let person2={}
+let person2= new Object();
+console.log(person2);
+person2.name="jaswanth";
+console.log(person2);
+person2.age=24;
+console.log(person2);
+person2.place="vija"
+console.log(person2)
+person2.place="hbja"
+console.log(person2)
+delete person2.age
+console.log(person2)
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+.magic{
+    width:100px;
+    height:100px;
+    background-color: red;
+    animation-name: vivek;
+    animation-duration: 10s;
+    animation-iteration-count: 4;
+       /* animation-iteration-count: infinite; */
+       animation-delay: 3s;
+
+}
+
+@keyframes vivek{
+
+0%{
+width:200px;
+height:200px;
+background-color: yellow;
+}
+50%{
+border-radius:50%
+}
+100%{
+background-color: blueviolet;
+transform: translateX(400px);
+/* border-radius: 50%; */
+}
+}
+
+    </style>
+</head>
+<body>
+    <div class="magic"></div>
+</body>
+</html>
