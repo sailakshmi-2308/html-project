@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <input type="text" placeholder="enter your task" id="task">
+    <button onclick="addTask()">Add Task</button>
+    <ul id="tasksList">
+
+    </ul>
+    <script>
+
+        function addTask(){
+            let taskField = document.getElementById("task");
+
+            if(taskField.value==""){
+                alert("please enter your task")
+                return false
+            }
+    
+            let existingTasks=getTasksFromLocalStorage()
+            console.log(existingTasks)
+
+            existingTasks.push(taskField.value);
+            console.log( existingTasks);
+
+            localStorage.setItem("tasks",JSON.stringify(existingTasks))
+
+        }
+
+        function getTasksFromLocalStorage(){
+            const tasks=localStorage.getItem("tasks");
+            return tasks ? JSON.parse(tasks) : []
+
+        }
+
+
+
+
+    </script>
+</body>
+</html>
