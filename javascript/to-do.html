@@ -12,7 +12,16 @@
     <ul id="tasksList">
 
     </ul>
+
+   
     <script>
+        // let b=[4,5,6,7]
+        // b.forEach(
+        //     function(g){
+        //         console.log(g) //4 5
+        //     }
+        // )
+
 
         function addTask(){
             let taskField = document.getElementById("task");
@@ -22,19 +31,32 @@
                 return false
             }
     
-            let existingTasks=getTasksFromLocalStorage()
-            console.log(existingTasks)
+            let existingTasks=getTasksFromLocalStorage();
+            console.log(existingTasks);
 
             existingTasks.push(taskField.value);
             console.log( existingTasks);
 
             localStorage.setItem("tasks",JSON.stringify(existingTasks))
+            taskField.value=""
+
+            loadTasks();
+
 
         }
 
         function getTasksFromLocalStorage(){
             const tasks=localStorage.getItem("tasks");
             return tasks ? JSON.parse(tasks) : []
+
+        }
+
+        function loadTasks(){
+            let taskLists=document.getElementById("tasksList")
+            let existingTasks=getTasksFromLocalStorage();
+            existingTasks.forEach(function(i,index){
+                console.log(i,index)
+            })
 
         }
 
