@@ -21,7 +21,9 @@
         //         console.log(g) //4 5
         //     }
         // )
-
+        onload=function(){
+            loadTasks()
+        }
 
         function addTask(){
             let taskField = document.getElementById("task");
@@ -32,10 +34,10 @@
             }
     
             let existingTasks=getTasksFromLocalStorage();
-            console.log(existingTasks);
+            // console.log(existingTasks);
 
             existingTasks.push(taskField.value);
-            console.log( existingTasks);
+            // console.log( existingTasks);
 
             localStorage.setItem("tasks",JSON.stringify(existingTasks))
             taskField.value=""
@@ -53,10 +55,25 @@
 
         function loadTasks(){
             let taskLists=document.getElementById("tasksList")
+            taskLists.innerHTML=""
             let existingTasks=getTasksFromLocalStorage();
             existingTasks.forEach(function(i,index){
-                console.log(i,index)
+                // console.log(i,index);
+                let li=document.createElement("li")
+                li.innerHTML=`${i} <button onclick="deleteTask(${index})">Delete</button>`
+                taskLists.appendChild(li)
+
             })
+
+        }
+
+
+        function deleteTask(index){
+            console.log(index)
+            let existingTasks=getTasksFromLocalStorage();
+            existingTasks.splice(index,1) 
+            localStorage.setItem("tasks",JSON.stringify(existingTasks))
+            loadTasks()
 
         }
 
