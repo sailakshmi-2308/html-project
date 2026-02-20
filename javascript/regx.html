@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <form onsubmit="return validate()" action="https://www.amazon.in/">
+        <div>
+            <input type="text" placeholder="enter your name" id="name">
+        </div>
+        <button>SUBMIT</button>
+    </form>
+
+    <script>
+        function validate(){
+            let name=document.getElementById("name").value;
+            let nameRegx=/^(?=(?:.*[A-Z]){1})(?=(?:.*[a-z]){1})(?=(?:.*\d){3})[A-Za-z\d]{5}$/
+            //989 sai 
+            console.log(name)
+            if(name==""){
+                alert("please enter your name")
+                return false
+            }
+            if(!name.match(nameRegx)){
+                alert("please enter valid name")
+                return false
+            }
+            
+
+            return true
+        }
+    </script>
+</body>
+</html>
