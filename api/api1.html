@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #doctors{
+            display:grid;
+            grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
+            gap:10px
+        }
+        .card{
+            border:2px solid black;
+            padding:10px
+        }
+    </style>
+</head>
+<body>
+    <div id="doctors"> </div>
+   <script>
+
+    onload=function(){
+   getDoctors();
+    }
+         function getDoctors(){
+            fetch("https://doc-back.onrender.com/doctors")
+            .then((result)=>{
+                console.log(result);
+                return result.json()
+            })
+            .then((res)=>{
+               console.log(res);
+               showDoctors(res)
+            })
+        }
+     
+
+        function  showDoctors(data){
+            data.map((i)=>{
+                console.log(i.name,i.salary);
+                document.getElementById("doctors").innerHTML+=
+                `
+                <div class="card">
+                    <p>Name: ${i.name}</p>
+                    <p>Salary: ${i.salary}</p>
+                    <p>Gender: ${i.gender}</p>
+                    <p>Age: ${i.age}</p>
+                    <p>Specialization:${i.specialization}</p>
+                </div>
+
+                `
+            })
+        }
+   </script>
+</body>
+</html>

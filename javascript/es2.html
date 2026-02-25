@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let employDetails=[
+            {name:"srinu",salary:120000,id:1},
+            {name:"jeevan",salary:200000,id:2},
+            {name:"jeevan2.0",salary:220000,id:3},
+        ]
+
+
+        let highest=employDetails.reduce((acc,emp)=>{
+            return emp.salary > acc ? emp.salary : acc
+        },0
+        )
+        console.log(highest)
+
+        // let bonusMonth= employDetails.map(function(emp){
+        //  return emp.salary+5000
+        // })
+
+        // console.log(bonusMonth)
+
+        // let bonusMonth=employDetails.map((emp)=>emp.salary+5000)
+        //    console.log(bonusMonth)
+
+
+        //    let bonusMonth=employDetails.map((emp)=>{
+        //         if(emp.salary>200000){
+        //             return emp
+        //         }
+        //    })
+        //    console.log(bonusMonth)
+
+
+        //  let bonusMonth=employDetails.filter((emp)=>{
+        //         if(emp.salary>200000){
+        //             return emp
+        //         }
+        //    })
+        //    console.log(bonusMonth)
+
+
+        
+        let bonusMonth=employDetails.find((emp)=>{
+                if(emp.salary>200000){
+                    return emp
+                }
+           })
+           console.log(bonusMonth)
+
+
+//     let c=[9,8,90,87,78]
+// const pavan=c.find( (i)=>{
+//     return i>9
+// }
+// )
+// console.log(pavan)
+
+// let c=[9,8,90,87,78]
+// const pavan=c.findIndex( (i)=>{
+//     return i>9
+// }
+// )
+// console.log(pavan)
+
+
+// let c=[9,8,90,87,78]
+// const pavan=c.some( (i)=>{
+//     return i>9
+// }
+// )
+// console.log(pavan)
+
+
+let c=[9,8,90,87,78]
+const pavan=c.every( (i)=>{
+    return i>9
+}
+)
+console.log(pavan)
+
+
+
+let pva=Math.floor((Math.random()*6)+1)
+console.log(pva)
+console.log("pyiki chudu")
+
+let otp=Math.floor((Math.random()*9000)+1000)
+console.log(otp)
+
+
+
+// 9999-1000=8999+1
+
+//reduce
+let nums=[10,20,60,80]
+
+let kasi=nums.reduce((accu,curr)=>{
+    return accu+curr   //0+10=10  10,20
+},0)
+
+console.log(kasi)
+
+
+
+
+
+
+
+
+
+
+
+           
+
+           
+
+
+
+
+
+        // employDetails.map( function(i){
+        //     console.log(i.name)
+        // }
+
+        //  let g=employDetails.map((i)=>i.name)
+        //  console.log(g)
+
+
+
+
+
+       
+
+        
+
+        let bb=[4,5,6,7,8]
+       bb.map(function(value){
+            console.log( value)
+        })
+
+      
+    </script>
+</body>
+</html>
