@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
     <style>
         #doctors{
             display:grid;
@@ -37,6 +39,7 @@
      
 
         function  showDoctors(data){
+            document.getElementById("doctors").innerHTML=""
             data.map((i)=>{
                 console.log(i.name,i.salary);
                 document.getElementById("doctors").innerHTML+=
@@ -47,10 +50,49 @@
                     <p>Gender: ${i.gender}</p>
                     <p>Age: ${i.age}</p>
                     <p>Specialization:${i.specialization}</p>
+                    <button onclick="deleteData(${i.id})">Delete</button>
+                    <button onclick="updateDoctors('${i.id}', '${i.name}', '${i.salary}', '${i.gender}', '${i.age}', '${i.specialization}')">Update</button>
                 </div>
 
                 `
             })
+        }
+
+        function deleteData(id){
+
+            axios.delete(`https://doc-back.onrender.com/doctors/${id}`)
+            .then((res)=>{
+
+                if(res.status==200){
+                    alert("deleted succesfully")
+                    console.log(res);
+                    getDoctors();
+                }
+            })
+
+        }
+console.log("hellooooo")
+        function updateDoctors(id,oldname,oldsalary,oldgender,oldage,oldspecialization){
+            let newName=prompt("enter new name" ,oldname)
+            let newsalary=prompt("enter new name" ,oldsalary)
+             let newgender=prompt("enter new name" ,oldgender)
+             let newage=prompt("enter new name" ,oldage)
+            let newspecialization=prompt("enter new name" ,oldspecialization)
+             
+
+console.log(newName)
+             axios.put(`https://doc-back.onrender.com/doctors/${id}`, {
+                name:newName,
+                age:newage,
+                salary:newsalary
+             })
+             .then((res)=>{
+                    alert("updated successfully")
+                    getDoctors()
+             })
+             .catch(err=> console.log(err))
+
+
         }
    </script>
 </body>
