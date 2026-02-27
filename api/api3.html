@@ -29,7 +29,16 @@ displayData(res.data)
         }
 
        function displayData(patients){
+       
         let patients_field=document.getElementById("table");
+         
+        patients_field.innerHTML=`
+        <tr>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Email</th>
+        </tr>
+        `
 
         patients.map((i)=>{
 patients_field.innerHTML+=`
